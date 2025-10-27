@@ -1,4 +1,7 @@
 /* Defaults */
+
+@import "tailwindcss";
+
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
@@ -31,7 +34,11 @@
 		--text-color-link-active: #6969f7;
 		--text-color-link-visited: #a6a6f8;
 
-		--background-color: #15202b;
+		--background-color: #000000;
+		--alt-background-color: #411d1d;
+
+		/* for dev purposes */
+		--dev-custom-border: 2px dashed;
 	}
 }
 
@@ -44,20 +51,19 @@
 @view-transition {
 	navigation: auto;
 }
-
 html,
 body {
-	padding: 0;
-	margin: 0 auto;
+
 	font-family: var(--font-family);
 	color: var(--text-color);
 	background-color: var(--background-color);
+	opacity: 0.8;
+
+	/* background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 100px ), repeating-linear-gradient( #444cf755, #444cf7 ); */
 }
+
 html {
 	overflow-y: scroll;
-}
-body {
-	max-width: 40em;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -122,9 +128,6 @@ main :first-child {
 	margin-top: 0;
 }
 
-header {
-	border-bottom: 1px dashed var(--color-gray-20);
-}
 
 #skip-link {
 	text-decoration: none;
@@ -192,14 +195,7 @@ code {
 }
 
 /* Header */
-header {
-	display: flex;
-	gap: 1em;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1em;
-}
+
 .home-link {
 	flex-grow: 1;
 	font-size: 1em; /* 16px /16 */
@@ -210,16 +206,6 @@ header {
 }
 
 /* Nav */
-.nav {
-	display: flex;
-	gap: .5em 1em;
-	padding: 0;
-	margin: 0;
-	list-style: none;
-}
-.nav-item {
-	display: inline-block;
-}
 .nav-item a[href]:not(:hover) {
 	text-decoration: none;
 }

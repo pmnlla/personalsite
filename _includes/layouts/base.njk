@@ -25,7 +25,7 @@
 		<style>/* This is an arbitrary CSS string added to the bundle */</style>
 
 		{#- Add the contents of a file to the bundle #}
-		<style>{% include "css/index.css" %}</style>
+		<style>{% include "css/index-tailwind.css" %}</style>
 
 		{#- Or you can add from node_modules #}
 		{# <style>{% include "node_modules/something.css" %}</style> #}
@@ -40,35 +40,27 @@
 		<script type="module">{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}</script>
 	</head>
 	<body>
+		<div class="min-h-screen flex flex-col">
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
-
-		<header>
+		<header class="border-b-1 border-dashed border-gray-20 mx-[5em] my-[1em] p-4 flex items-center justify-between ">
 			<a href="/" class="home-link">{{ metadata.title }}</a>
 
-			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
 			<nav>
 				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav">
+				<ul class=" nav flex gap-2 gap-x-[0.5em]">
 				{%- for entry in collections.all | eleventyNavigation %}
-					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+					<li class="inline-block nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
 				{%- endfor %}
 				</ul>
 			</nav>
 		</header>
 
-		<main id="main">
+		<main id="main" class="flex flex-1 justify-center items-center">
 			<heading-anchors>
 				{{ content | safe }}
 			</heading-anchors>
 		</main>
-
-		<footer>
-			<p>
-				<em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em>
-			</p>
-		</footer>
-
-		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
-		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
+				</div>
+				
 	</body>
 </html>

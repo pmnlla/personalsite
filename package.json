@@ -15,38 +15,34 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/11ty/eleventy-base-blog.git"
+		"url": "git://github.com/pmnlla/personalsite"
 	},
 	"author": {
-		"name": "Zach Leatherman",
-		"email": "zachleatherman@gmail.com",
-		"url": "https://zachleat.com/"
+		"name": "pomonella01",
+		"email": "hi@pomonella.dev",
+		"url": "https://itai.sh"
 	},
 	"license": "MIT",
 	"engines": {
 		"node": ">=18"
 	},
-	"funding": {
-		"type": "opencollective",
-		"url": "https://opencollective.com/11ty"
-	},
-	"bugs": {
-		"url": "https://github.com/11ty/eleventy-base-blog/issues"
-	},
-	"homepage": "https://github.com/11ty/eleventy-base-blog#readme",
 	"devDependencies": {
 		"@11ty/eleventy": "^3.1.2",
 		"@11ty/eleventy-img": "^6.0.4",
 		"@11ty/eleventy-navigation": "^1.0.4",
 		"@11ty/eleventy-plugin-rss": "^2.0.4",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+		"autoprefixer": "^10.4.21",
 		"cross-env": "^7.0.3",
 		"luxon": "^3.6.1",
+		"postcss": "^8.5.6",
 		"prismjs": "^1.30.0",
+		"tailwindcss": "^4.1.16",
 		"zod": "^3.25.67",
 		"zod-validation-error": "^3.5.2"
 	},
 	"dependencies": {
+		"@tailwindcss/cli": "^4.1.16",
 		"@zachleat/heading-anchors": "^1.0.5"
 	}
 }

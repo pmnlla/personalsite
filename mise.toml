@@ -1,0 +1,18 @@
+[tools]
+node = "latest"
+bun = "latest"
+
+[env]
+NODE_ENV = "development"
+
+[tasks.install]
+description = "Install dependencies"
+run = "bun install"
+
+[tasks.build]
+description = "Build the site"
+run = "bun run build"
+
+[tasks.dev]
+description = "Start development server"
+run = "bun run dev"
