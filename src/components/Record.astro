@@ -1,0 +1,9 @@
+---
+import { spotifyMonitor } from "../util/spotify";
+
+var sm = new spotifyMonitor();
+await sm.SpotifyAuth();
+var x = await sm.SpotifyGetPlayingStatus(true);
+
+
+---

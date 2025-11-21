@@ -1,0 +1,22 @@
+---
+import { makeid } from "../../util/genID";
+import { getSpotifyAuthState } from "../../savestate.ts"; 
+import querystring from 'querystring'
+
+var client_id = import.meta.env.SPOTIFY_CLIENT_ID
+var redirect_uri = import.meta.env.SPOTIFY_REDIRECT_URI
+
+var state = makeid(16);
+var scope = 'user-read-private user-read-playback-state ';
+
+if (!getSpotifyAuthState()) {
+return Astro.redirect('https://accounts.spotify.com/authorize?' +
+  querystring.stringify({
+    response_type: 'code',
+   client_id: client_id,
+    scope: scope,
+    redirect_uri: redirect_uri,
+    state: state
+  }));
+}
+---

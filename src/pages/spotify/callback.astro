@@ -1,0 +1,17 @@
+---
+import { setSpotifyAuthState, setSpotifyAuthValue, getSpotifyAuthState, getSpotifyAuthValue } from "../../savestate";
+
+const code = Astro.url.searchParams.get('code');
+
+    if (code && !getSpotifyAuthState()) {
+    setSpotifyAuthValue(code);
+    console.log(`Wrote ${code} into AuthValue!`)
+    setSpotifyAuthState(true);
+    return new Response(200)
+    }
+    else {
+        console.log(`Did not write AuthValue | Code is ${code}`);
+        return new Response(400)
+    }
+
+---

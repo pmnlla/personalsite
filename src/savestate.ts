@@ -1,0 +1,12 @@
+let spotifyAuthValue: string = "";
+export function getSpotifyAuthValue() {return spotifyAuthValue};
+export function setSpotifyAuthValue(a: string) {spotifyAuthValue = a};
+let spotifyAuthRefresh: string = "";
+export function getSpotifyAuthRefresh() {return spotifyAuthRefresh};
+export function setSpotifyAuthRefresh(a: string) {spotifyAuthRefresh = a};
+let spotifyAuthComplete: Boolean = false;
+export function getSpotifyAuthComplete() {return spotifyAuthComplete};
+export function setSpotifyAuthComplete(a: boolean) {spotifyAuthComplete = a};
+let spotifyAuthStatus: Boolean = false;
+export function getSpotifyAuthState() {return spotifyAuthStatus};
+export function setSpotifyAuthState(a: boolean) {spotifyAuthStatus = a};
